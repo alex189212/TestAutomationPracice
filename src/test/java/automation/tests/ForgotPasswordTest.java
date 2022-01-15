@@ -6,6 +6,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import automation.pages.ForgotPasswordPage;
+
 public class ForgotPasswordTest extends TestBase {
 	@Test
 	public void canRetrievePassword() {

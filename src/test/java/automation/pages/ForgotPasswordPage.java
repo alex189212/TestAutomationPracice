@@ -1,4 +1,4 @@
-package automation.tests;
+package automation.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,10 +21,10 @@ public class ForgotPasswordPage extends PageObjectBase {
 	@FindBy(how=How.CSS, using="#form_forgotpassword > fieldset > p > button")
 	private WebElement retrievePasswordButtonElement;
 	
-	@FindBy(how=How.CLASS_NAME, using="alert alert-danger")
+	@FindBy(how=How.CLASS_NAME, using="#center_column > div > div")
 	private WebElement errorMessageElement;
 	
-	@FindBy(how=How.CLASS_NAME, using="alert alert-success")
+	@FindBy(how=How.CSS, using="#center_column > div > p")
 	private WebElement successMessageElement;
 	
 	public ForgotPasswordPage(WebDriver driver) {
@@ -53,6 +53,6 @@ public class ForgotPasswordPage extends PageObjectBase {
 	public boolean isSuccess() {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOf(successMessageElement));
-		return true;
+		return successMessageElement.getText().contains("confirmation");
 	}
 }
