@@ -9,6 +9,8 @@ public class AccountPage extends PageObjectBase {
 	private String url = "http://automationpractice.com/index.php?controller=my-account";
 	@FindBy (how = How.CSS, using=".account span")
 	private WebElement accountNameElement;
+	@FindBy (how = How.CSS, using="a.home")
+	private WebElement navigationHomeElement;
 	
 	public AccountPage(WebDriver driver) {
 		super(driver);
@@ -16,5 +18,9 @@ public class AccountPage extends PageObjectBase {
 	
 	public String getAccountName() {
 		return accountNameElement.getText();
+	}
+	
+	public void returnHome() {
+		navigationHomeElement.click();
 	}
 }
