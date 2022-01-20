@@ -13,7 +13,7 @@ public class HomePage extends PageObjectBase {
 	WebElement signinButton;
 	@FindBy (how=How.CSS, using="a[title='Faded Short Sleeve T-Shirts']")
 	WebElement fadedTshirtsElement;
-	
+	@FindBy (how=How.CSS, using="")
 	Actions homepageActions = new Actions(driver);
 	
 	public HomePage(WebDriver driver) {
@@ -53,12 +53,6 @@ public class HomePage extends PageObjectBase {
 	public void clickImage() {
 
 		new ActionsCtrlExtn(this.productImage, this.driver).clickOnImage();
-
-	}
-
-	public void clickTitle() {
-
-		new HomePageCtrlExtn(this.productTilte).clickOnTitle();
 
 	}
 }
