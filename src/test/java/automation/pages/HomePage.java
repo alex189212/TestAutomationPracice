@@ -6,6 +6,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import automation.UI.ActionsCtrlExtn;
+
 public class HomePage extends PageObjectBase {
 	private final String homepageURL = "http://automationpractice.com";
 	
@@ -13,7 +15,9 @@ public class HomePage extends PageObjectBase {
 	WebElement signinButton;
 	@FindBy (how=How.CSS, using="a[title='Faded Short Sleeve T-Shirts']")
 	WebElement fadedTshirtsElement;
-	@FindBy (how=How.CSS, using="")
+	@FindBy (how=How.CSS, using="img[title='Faded Short Sleeve T-Shirts']")
+	WebElement productImage;
+	
 	Actions homepageActions = new Actions(driver);
 	
 	public HomePage(WebDriver driver) {

@@ -15,7 +15,7 @@ public class HomePageTests extends TestBase {
 	@Test
 	public void canTestUserReg() {
 
-		new HomePage(this.getDriver()).navigation().clickImage();
+		new HomePage(this.getDriver()).navigate().clickImage();
 		String actualUrl = this.getDriver().getCurrentUrl();
 		Assert.assertEquals(actualUrl, expectedUrl);
 	}
