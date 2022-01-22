@@ -9,7 +9,7 @@ import org.openqa.selenium.support.How;
 import automation.UI.ActionsCtrlExtn;
 
 public class HomePage extends PageObjectBase {
-	private final String homepageURL = "http://automationpractice.com";
+	private final String homepageURL = "http://www.invenauto.tech/index.php";
 	
 	@FindBy (how=How.CSS, using=".login")
 	WebElement signinButton;
@@ -17,6 +17,8 @@ public class HomePage extends PageObjectBase {
 	WebElement fadedTshirtsElement;
 	@FindBy (how=How.CSS, using="img[title='Faded Short Sleeve T-Shirts']")
 	WebElement productImage;
+	@FindBy(how=How.CSS, using= "div[id='contact-link']>a")
+	WebElement contactUs;
 	
 	Actions homepageActions = new Actions(driver);
 	
@@ -59,4 +61,12 @@ public class HomePage extends PageObjectBase {
 		new ActionsCtrlExtn(this.productImage, this.driver).clickOnImage();
 
 	}
+	
+	public ContactUsPage clickContactUs() {
+		
+		this.contactUs.click();
+		
+		return new ContactUsPage(this.driver);
+	}
 }
+

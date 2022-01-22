@@ -33,4 +33,10 @@ public class SelectCtrlExtn {
 	public void selectState(String text) {
 		select.selectByVisibleText(text);
 	}
+
+	public void selectSubjectHeading() {
+
+		select.selectByVisibleText("Customer service");
+	}
+
 }
