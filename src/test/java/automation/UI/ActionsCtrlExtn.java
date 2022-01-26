@@ -34,4 +34,30 @@ public class ActionsCtrlExtn {
 
 	}
 
+	public void hoverOverProductImage() {
+		action.moveToElement(this.element).build().perform();
+		/*
+		 * action.moveToElement(driver.findElement(By.cssSelector(
+		 * "#blocknewproducts > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.first-item-of-tablet-line.first-item-of-mobile-line > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default > span"
+		 * ))) .click().build().perform();
+		 */
+
+	}
+
+	public void clickOnHoverAddToCartButton() {
+		action.moveToElement(this.element).click().build().perform();
+	}
+
+	public void clickOncontinueShopping() {
+		action.moveToElement(this.element).click().build().perform();
+	}
+
+	public void clickOnCheckout() {
+		action.moveToElement(this.element).click().build().perform();
+	}
+
+	public void clickOnCart() {
+		action.moveToElement(this.element).click().build().perform();
+	}
+
 }

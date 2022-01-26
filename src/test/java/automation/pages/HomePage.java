@@ -10,33 +10,36 @@ import automation.UI.ActionsCtrlExtn;
 
 public class HomePage extends PageObjectBase {
 	private final String homepageURL = "http://www.invenauto.tech/index.php";
-	
-	@FindBy (how=How.CSS, using=".login")
+
+	@FindBy(how = How.CSS, using = ".login")
 	WebElement signinButton;
-	@FindBy (how=How.CSS, using="a[title='Faded Short Sleeve T-Shirts']")
+	@FindBy(how = How.CSS, using = "a[title='Faded Short Sleeve T-Shirts']")
 	WebElement fadedTshirtsElement;
-	@FindBy (how=How.CSS, using="img[title='Faded Short Sleeve T-Shirts']")
+	@FindBy(how = How.CSS, using = "#blocknewproducts > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.first-item-of-tablet-line.first-item-of-mobile-line > div > div.left-block > div > a.product_img_link > img")
 	WebElement productImage;
-	@FindBy(how=How.CSS, using= "div[id='contact-link']>a")
+	@FindBy(how = How.CSS, using = "div[id='contact-link']>a")
 	WebElement contactUs;
-	
+	@FindBy(how = How.CSS, using = "a[title='View my shopping cart']")
+	WebElement cartButton;
+	@FindBy(how = How.CSS, using = "li[class='ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line first-item-of-tablet-line first-item-of-mobile-line hovered'] a[title='Add to cart'] span")
+	WebElement onHoverAddToCartButton;
+    @FindBy(how=How.CSS,using="span[title='Continue shopping'] span:nth-child(1)")
+    WebElement continueShopping;
 	Actions homepageActions = new Actions(driver);
-	
+
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
-	
+
 	public HomePage navigate() {
 		this.driver.navigate().to(homepageURL);
 		return this;
 	}
-	
+
 	public void accessAccount() {
 		if (signinButton.getText() == "Sign in") {
 			login();
-		}
-		else
-		{
+		} else {
 			signinButton.click();
 		}
 	}
@@ -44,29 +47,49 @@ public class HomePage extends PageObjectBase {
 	public void login() {
 		if (signinButton.getText() == "Sign in") {
 			signinButton.click();
-		}
-		else
-		{
+		} else {
 			accessAccount();
 		}
 	}
-	
+
 	public String addToCartandWishlist() {
 		String result = "";
 		return result;
 	}
-	
+
 	public void clickImage() {
 
 		new ActionsCtrlExtn(this.productImage, this.driver).clickOnImage();
 
 	}
-	
+
 	public ContactUsPage clickContactUs() {
-		
+
 		this.contactUs.click();
-		
+
 		return new ContactUsPage(this.driver);
 	}
-}
+	
+	public HomePage hoverOverProductImage() {
 
+		new ActionsCtrlExtn(productImage, this.driver).hoverOverProductImage();
+		return this;
+	}
+	
+	public HomePage clickOnHoverAddToCartButton() {
+
+		new ActionsCtrlExtn(onHoverAddToCartButton, this.driver).clickOnHoverAddToCartButton();
+		return this;
+	}
+	
+	public HomePage clickOncontinueShopping() {
+
+		new ActionsCtrlExtn(continueShopping, this.driver).clickOncontinueShopping();
+		return this;
+	}
+   public ShoppingCartSummaryPage clickOnCart() {
+	   
+	   new ActionsCtrlExtn(this.cartButton,this.driver).clickOnCart();
+	   return new ShoppingCartSummaryPage(this.driver);
+   }
+}
