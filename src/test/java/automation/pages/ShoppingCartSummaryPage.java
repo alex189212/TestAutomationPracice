@@ -12,7 +12,7 @@ public class ShoppingCartSummaryPage extends PageObjectBase {
 	@FindBy(how = How.CSS, using = "a[class='button btn btn-default standard-checkout button-medium'] span")
 	private WebElement proceedToCheckOut;
 
-	protected ShoppingCartSummaryPage(WebDriver driver) {
+	public ShoppingCartSummaryPage(WebDriver driver) {
 		super(driver);
 	}
 	
