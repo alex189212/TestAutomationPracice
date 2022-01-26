@@ -14,25 +14,26 @@ public abstract class TestBase {
 	protected WebDriver getDriver() {
 		return this.driver;
 	}
-	
+
 	protected void setup() {
 		launchChromeDriver();
 	}
-	
+
 	protected void cleanup() {
 		this.driver.quit();
 	}
-	
+
 	private void launchChromeDriver() {
-		Path resourceDirectory = Paths.get("src","test","resources");
+		Path resourceDirectory = Paths.get("src", "test", "resources");
 		String absolutePath = resourceDirectory.toFile().getAbsolutePath();
 		Path driverFile = Paths.get(absolutePath, "chromedriver.exe");
-		
+
 		System.setProperty("webdriver.chrome.driver", driverFile.toFile().getAbsolutePath());
 
-		this.driver = new ChromeDriver();	
-		
+		this.driver = new ChromeDriver();
+		this.driver.manage().window().maximize();
+
 		long pageLoadTimeout = 60;
-		this.driver.manage().timeouts().implicitlyWait(pageLoadTimeout , TimeUnit.SECONDS);
+		this.driver.manage().timeouts().implicitlyWait(pageLoadTimeout, TimeUnit.SECONDS);
 	}
 }
