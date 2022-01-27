@@ -1,5 +1,6 @@
 package automation.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.How;
 import automation.UI.ActionsCtrlExtn;
 
 public class HomePage extends PageObjectBase {
+	
 	private final String homepageURL = "http://www.invenauto.tech/index.php";
 
 	@FindBy(how = How.CSS, using = ".login")
@@ -51,10 +53,9 @@ public class HomePage extends PageObjectBase {
 			accessAccount();
 		}
 	}
-
-	public String addToCartandWishlist() {
-		String result = "";
-		return result;
+	
+	public void goToProductPage(String product) {
+		driver.findElement(By.cssSelector("a[title=" + product + "]")).click();
 	}
 
 	public void clickImage() {

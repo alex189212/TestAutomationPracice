@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import automation.pages.AccountPage;
 import automation.pages.HomePage;
 import automation.pages.LoginPage;
+import automation.pages.ProductPage;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.Assert;
@@ -24,9 +25,10 @@ public class WishlistTest extends TestBase{
 	  AccountPage accountInfo = new AccountPage(this.getDriver());
 	  accountInfo.returnHome();
 	  HomePage loggedInHome = new HomePage(this.getDriver());
-	  String result = loggedInHome.addToCartandWishlist();
-	  
-	  Assert.assertEquals(result, wishlistSuccess);
+	  loggedInHome.goToProductPage("Faded Short Sleeve T-shirts");
+	  ProductPage productToAdd = new ProductPage(this.getDriver());
+	  //String result = productToAdd.addToCartandWishlist();
+	  //Assert.assertEquals(result, wishlistSuccess);
   }
   
   @BeforeMethod
