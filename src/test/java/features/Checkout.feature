@@ -9,3 +9,4 @@ Feature: Testing Chceckout feautre functionality
     And click on cart
     And click on checkout button
     Then verify the url of the page
+    And Close the browser

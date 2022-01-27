@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import org.testng.Assert;
+
 import automation.pages.HomePage;
 import automation.pages.ShoppingCartSummaryPage;
 import automation.tests.TestBase;
@@ -30,8 +32,9 @@ public class Step extends TestBase {
 	}
 
 	@And("click on onHover add to cart button")
-	public void click_on_on_hover_add_to_cart_button() {
+	public void click_on_on_hover_add_to_cart_button() throws InterruptedException {
 		homepage.clickOnHoverAddToCartButton();
+		Thread.sleep(5000);
 	}
 
 	@And("click on continue shopping")
@@ -51,7 +54,13 @@ public class Step extends TestBase {
 
 	@Then("verify the url of the page")
 	public void verify_the_url_of_the_page() {
+		Assert.assertEquals(this.getDriver().getCurrentUrl(),
+				"http://invenauto.tech/index.php?controller=authentication&back=http%3A%2F%2Finvenauto.tech%2Findex.php%3Fcontroller%3Dorder%26step%3D1");
+	}
 
+	@And("Close the browser")
+	public void close_the_browser() {
+		super.cleanup();
 	}
 
 }
