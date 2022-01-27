@@ -12,7 +12,7 @@ import automation.UI.UIControlBase;
 import automation.pages.PageObjectBase;
 
 public class ForgotPasswordPage extends PageObjectBase {
-	private final String url = "http://automationpractice.com/index.php?controller=password";
+	private final String url = "http://invenauto.tech/index.php?controller=password";
 	private ForgotPasswordControlExtension controller = new ForgotPasswordControlExtension(this.driver);
 	
 	@FindBy(how=How.ID, using="email")
