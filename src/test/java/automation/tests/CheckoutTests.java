@@ -27,7 +27,7 @@ public class CheckoutTests extends TestBase {
 
 	@AfterMethod
 	public void afterMethod() {
-		super.cleanup();
+		//super.cleanup();
 	}
 
 }

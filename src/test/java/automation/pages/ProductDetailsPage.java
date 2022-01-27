@@ -31,9 +31,11 @@ public class ProductDetailsPage extends PageObjectBase {
 		return this;
 	}
 
-	public void addToCart() {
+	public ProductDetailsPage addToCart() {
 
 		new ActionsCtrlExtn(addToCart, this.driver).addToCart();
+		return this;
 	}
 
+	
 }

@@ -10,7 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Step extends TestBase {
+public class CheckOutStepDefinitions extends TestBase {
 
 	HomePage homepage;
 
@@ -32,9 +32,9 @@ public class Step extends TestBase {
 	}
 
 	@And("click on onHover add to cart button")
-	public void click_on_on_hover_add_to_cart_button() throws InterruptedException {
+	public void click_on_on_hover_add_to_cart_button() {
 		homepage.clickOnHoverAddToCartButton();
-		Thread.sleep(5000);
+
 	}
 
 	@And("click on continue shopping")

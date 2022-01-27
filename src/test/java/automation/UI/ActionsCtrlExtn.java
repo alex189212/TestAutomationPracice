@@ -37,6 +37,7 @@ public class ActionsCtrlExtn {
 	}
 
 	public void hoverOverProductImage() {
+
 		action.moveToElement(this.element).build().perform();
 		/*
 		 * action.moveToElement(driver.findElement(By.cssSelector(
@@ -51,7 +52,7 @@ public class ActionsCtrlExtn {
 	}
 
 	public void clickOncontinueShopping() {
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(this.element));
 		action.moveToElement(this.element).click().build().perform();
 	}
@@ -65,6 +66,8 @@ public class ActionsCtrlExtn {
 	}
 
 	public void clickOnProceedToCheckout() {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(this.element));
 		action.moveToElement(this.element).click().build().perform();
 	}
 

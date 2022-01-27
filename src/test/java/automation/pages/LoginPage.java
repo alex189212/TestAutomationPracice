@@ -1,13 +1,9 @@
 package automation.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import automation.UI.LoginControlExtension;
 
 public class LoginPage extends PageObjectBase {
@@ -18,6 +14,8 @@ public class LoginPage extends PageObjectBase {
 	private WebElement passwordElement;
 	@FindBy(how = How.CSS, using = "button[id='SubmitLogin'] span")
 	private WebElement signInButton;
+	@FindBy(how = How.CSS, using = "img[alt='Clothes Carnival']")
+	WebElement homePageLogo;
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -31,7 +29,16 @@ public class LoginPage extends PageObjectBase {
 	public void enterLoginInfo(String email, String password) {
 		LoginControlExtension loginElements = new LoginControlExtension(this.driver, emailBoxElement, passwordElement);
 		loginElements.sendLogin(email, password);
-        signInButton.click();
+		signInButton.click();
+	}
+
+	public HomePage login(String email, String password) {
+
+		LoginControlExtension loginElements = new LoginControlExtension(this.driver, emailBoxElement, passwordElement);
+		loginElements.sendLogin(email, password);
+		signInButton.click();
+		this.homePageLogo.click();
+		return new HomePage(this.driver);
 	}
 
 }

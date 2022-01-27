@@ -12,9 +12,9 @@ import org.testng.annotations.AfterMethod;
 public class LoginTests extends TestBase{
   @Test
   public void verifyLoginSuccessful() {
-	  final String expectedAccountName = "Obiwan Kenobi";
-	  final String email = "helloThere245@att.net";
-	  final String password = "theHighGround";
+	  final String expectedAccountName = "David Warner";
+	  final String email = "abc@abc.com";
+	  final String password = "davidwarner123";
 	  
 	  LoginPage login = new LoginPage(this.getDriver())
 			  .navigate();
