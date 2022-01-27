@@ -3,6 +3,8 @@ package automation.UI;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ActionsCtrlExtn {
 
@@ -49,6 +51,8 @@ public class ActionsCtrlExtn {
 	}
 
 	public void clickOncontinueShopping() {
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOf(this.element));
 		action.moveToElement(this.element).click().build().perform();
 	}
 
@@ -57,6 +61,10 @@ public class ActionsCtrlExtn {
 	}
 
 	public void clickOnCart() {
+		action.moveToElement(this.element).click().build().perform();
+	}
+
+	public void clickOnProceedToCheckout() {
 		action.moveToElement(this.element).click().build().perform();
 	}
 

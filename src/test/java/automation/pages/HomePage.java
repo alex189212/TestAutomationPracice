@@ -27,7 +27,7 @@ public class HomePage extends PageObjectBase {
 	WebElement cartButton;
 	@FindBy(how = How.CSS, using = "li[class='ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line first-item-of-tablet-line first-item-of-mobile-line hovered'] a[title='Add to cart'] span")
 	WebElement onHoverAddToCartButton;
-    @FindBy(how=How.CSS,using="span[title='Continue shopping'] span:nth-child(1)")
+    @FindBy(how=How.CSS,using="#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span > span")
     WebElement continueShopping;
 	Actions homepageActions = new Actions(driver);
 

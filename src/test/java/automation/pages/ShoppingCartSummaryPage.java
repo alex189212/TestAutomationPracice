@@ -18,9 +18,10 @@ public class ShoppingCartSummaryPage extends PageObjectBase {
 	}
 	
 	
-	public void clickOnCheckout() {
+	public AddressesPage clickOnCheckout() {
 		
 		new ActionsCtrlExtn(this.proceedToCheckOut,this.driver).clickOnCheckout();
+		return new AddressesPage(this.driver);
 	}
 
 	public LoginPage proceedToCheckout() {
