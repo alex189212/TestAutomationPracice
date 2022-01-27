@@ -24,7 +24,8 @@ public class ProductPage extends PageObjectBase {
 		return driver.findElement(By.xpath("//i[@class='icon-check']/..[@class='title']")).getText();
 	}
 	
-	public void proceedToCheckout() {
+	public ShoppingCartSummaryPage proceedToCheckout() {
 		driver.findElement(By.cssSelector("a[title='Proceed to checkout']")).click();
+		return new ShoppingCartSummaryPage(this.driver);
 	}
 }

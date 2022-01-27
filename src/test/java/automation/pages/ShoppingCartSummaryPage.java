@@ -1,5 +1,6 @@
 package automation.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,4 +23,8 @@ public class ShoppingCartSummaryPage extends PageObjectBase {
 		new ActionsCtrlExtn(this.proceedToCheckOut,this.driver).clickOnCheckout();
 	}
 
+	public LoginPage proceedToCheckout() {
+		driver.findElement(By.cssSelector("a[title='Proceed to checkout']"));
+		return new LoginPage(this.driver);
+	}
 }

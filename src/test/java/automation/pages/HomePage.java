@@ -15,6 +15,8 @@ public class HomePage extends PageObjectBase {
 
 	@FindBy(how = How.CSS, using = ".login")
 	WebElement signinButton;
+	@FindBy(how = How.CSS, using = ".account")
+	WebElement accountButton;
 	@FindBy(how = How.CSS, using = "a[title='Faded Short Sleeve T-Shirts']")
 	WebElement fadedTshirtsElement;
 	@FindBy(how = How.CSS, using = "#blocknewproducts > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.first-item-of-tablet-line.first-item-of-mobile-line > div > div.left-block > div > a.product_img_link > img")
@@ -38,24 +40,18 @@ public class HomePage extends PageObjectBase {
 		return this;
 	}
 
-	public void accessAccount() {
-		if (signinButton.getText() == "Sign in") {
-			login();
-		} else {
-			signinButton.click();
-		}
+	public AccountPage accessAccount() {
+		accountButton.click();
+		return new AccountPage(this.driver);
 	}
-
-	public void login() {
-		if (signinButton.getText() == "Sign in") {
-			signinButton.click();
-		} else {
-			accessAccount();
-		}
+	public LoginPage login() {
+		signinButton.click();
+		return new LoginPage(this.driver);
 	}
 	
-	public void goToProductPage(String product) {
+	public ProductPage goToProductPage(String product) {
 		driver.findElement(By.cssSelector("a[title=" + product + "]")).click();
+		return new ProductPage(this.driver);
 	}
 
 	public void clickImage() {
