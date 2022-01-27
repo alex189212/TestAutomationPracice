@@ -9,7 +9,7 @@ import automation.UI.PrintedDressControlExtension;
 import automation.UI.UIControlBase;
 
 public class PrintedDressPage extends PageObjectBase {
-	private final String url = "http://automationpractice.com/index.php?id_product=3&controller=product";
+	private final String url = "http://invenauto.tech/index.php?id_product=3&controller=product";
 	private PrintedDressControlExtension controller = new PrintedDressControlExtension(this.driver);
 	
 	@FindBy(how=How.ID, using="wishlist_button")
@@ -17,6 +17,21 @@ public class PrintedDressPage extends PageObjectBase {
 	
 	@FindBy(how=How.CSS, using="#product > div.fancybox-overlay.fancybox-overlay-fixed > div > div > div > div > p")
 	private WebElement wishlistErrorElement;
+	
+	@FindBy(how=How.CSS, using="#center_column > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1")
+	private WebElement titleElement;
+	
+	@FindBy(how=How.ID, using="our_price_display")
+	private WebElement priceElement;
+	
+	@FindBy(how=How.ID, using="bigpic")
+	private WebElement imageElement;
+	
+	@FindBy(how=How.CSS, using="")
+	private WebElement reviewsElement;
+	
+	@FindBy(how=How.CSS, using="")
+	private WebElement ratingsElement;
 	
 	public PrintedDressPage(WebDriver driver) {
 		super(driver);
@@ -41,5 +56,25 @@ public class PrintedDressPage extends PageObjectBase {
 
 	public Boolean isAddedToWishlist() {
 		return !wishlistErrorElement.isDisplayed();
+	}
+
+	public boolean isTitleVisible() {
+		return titleElement.isDisplayed();
+	}
+
+	public boolean isImageVisible() {
+		return imageElement.isDisplayed();
+	}
+
+	public boolean isPriceVisible() {
+		return priceElement.isDisplayed();
+	}
+
+	public boolean areReviewsVisible() {
+		return false;
+	}
+
+	public boolean areRatingsVisible() {
+		return false;
 	}
 }
