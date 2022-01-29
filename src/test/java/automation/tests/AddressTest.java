@@ -12,7 +12,6 @@ public class AddressTest extends TestBase {
 	final String expectedAccountName = "David Warner";
 	final String email = "abc@abc.com";
 	final String loginpassword = "davidwarner123";
-
 	final String emailAddress = "sarabcd@zycd.com";
 	final String gender = "male";
 	final String firstName = "Adam";
