@@ -8,7 +8,7 @@ import org.openqa.selenium.support.How;
 import automation.UI.Page1CtrlExtn;
 
 public class UserRegistrationPage extends PageObjectBase {
-	private String url = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
+	private String url = "http://invenauto.tech/index.php?controller=authentication&back=my-account";
 
 	@FindBy(how = How.ID, using = "email_create")
 	private WebElement emailAddress;

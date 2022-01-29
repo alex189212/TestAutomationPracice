@@ -26,7 +26,7 @@ public class PersonalInformationPage extends PageObjectBase {
 	private WebElement monthselect;
 	@FindBy(how = How.ID, using = "years")
 	private WebElement yearselect;
-	@FindBy(how = How.ID, using = "address1")
+	/*@FindBy(how = How.ID, using = "address1")
 	private WebElement address1;
 	@FindBy(how = How.ID, using = "city")
 	private WebElement city;
@@ -37,7 +37,7 @@ public class PersonalInformationPage extends PageObjectBase {
 	@FindBy(how = How.ID, using = "id_country")
 	private WebElement country;
 	@FindBy(how = How.ID, using = "phone_mobile")
-	private WebElement mobileno;
+	private WebElement mobileno;*/
 	@FindBy(how = How.ID, using = "submitAccount")
 	private WebElement registerbutton;
 
@@ -94,7 +94,7 @@ public class PersonalInformationPage extends PageObjectBase {
 
 	}
 
-	public PersonalInformationPage enterAddress1(String address) {
+	/*public PersonalInformationPage enterAddress1(String address) {
 		new Page2CtrlExtn(this.address1).enterAddress1(address);
 
 		return this;
@@ -132,7 +132,7 @@ public class PersonalInformationPage extends PageObjectBase {
 		new Page2CtrlExtn(this.mobileno).enterMobNo(number);
 		return this;
 
-	}
+	}*/
 
 	public void clickregister() {
 

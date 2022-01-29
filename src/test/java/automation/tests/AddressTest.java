@@ -48,7 +48,7 @@ public class AddressTest extends TestBase {
 
 	@AfterMethod
 	public void tearDown() {
-		// super.cleanup();
+		super.cleanup();
 	}
 
 }

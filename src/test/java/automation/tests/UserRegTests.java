@@ -11,7 +11,7 @@ import org.testng.annotations.AfterMethod;
 
 public class UserRegTests extends TestBase {
 
-	String emailAddress = "sarabcd@zycd.com";
+	String emailAddress = "sarabcdy@zycd.com";
 	String gender = "male";
 	String firstName = "Adam";
 	String lastname = "levine";
@@ -32,9 +32,7 @@ public class UserRegTests extends TestBase {
 
 		new UserRegistrationPage(this.getDriver()).navigation().enterEmailAddress(emailAddress).submit()
 				.selectGenderCheckbox(gender).enterFirstname(firstName).enterlastname(lastname).enterPassword(password)
-				.selectDay(day).selectMonth(month).selectYear(year).enterAddress1(address1).enterCityName(cityname)
-				.selectState(state).enterPostCode(postCode).selectCountry(country).enterPhoneNumber(phonenumber)
-				.clickregister();
+				.selectDay(day).selectMonth(month).selectYear(year).clickregister();
 
 		Assert.assertEquals(this.getDriver().findElement(By.className("page-heading")).getText(), expected);
 	}
@@ -47,7 +45,7 @@ public class UserRegTests extends TestBase {
 	@AfterMethod
 	public void tearDown() {
 
-		// super.cleanup();
+		super.cleanup();
 	}
 
 }
