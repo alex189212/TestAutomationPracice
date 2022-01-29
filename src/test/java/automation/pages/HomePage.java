@@ -54,7 +54,7 @@ public class HomePage extends PageObjectBase {
 	}
 
 	public ProductPage goToProductPage(String product) {
-		driver.findElement(By.cssSelector("a[title=" + product + "]")).click();
+		driver.findElement(By.cssSelector("a[title='" + product +  "']")).click();
 		return new ProductPage(this.driver);
 	}
 

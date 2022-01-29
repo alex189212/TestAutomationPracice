@@ -8,6 +8,7 @@ import automation.pages.ProductPage;
 import automation.pages.ShoppingCartSummaryPage;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
 public class CheckoutLoginTest extends TestBase{
@@ -16,6 +17,7 @@ public class CheckoutLoginTest extends TestBase{
 	  String product = "Faded Short Sleeves T-shirt";
 	  String userEmail = "helloThere245@att.net";
 	  String userPassword = "theHighGround";
+	  String endURL = "http://invenauto.tech/index.php?controller=authentication";
 	  HomePage homepage = new HomePage(this.getDriver())
 			  .navigate();
 	  ProductPage productToAdd = homepage.goToProductPage(product);
@@ -23,6 +25,8 @@ public class CheckoutLoginTest extends TestBase{
 	  ShoppingCartSummaryPage cartSummary = productToAdd.proceedToCheckout();
 	  cartSummary.proceedToCheckout().enterLoginInfo(userEmail, userPassword);
 	  AddressesPage addressForm = new AddressesPage(this.getDriver());
+	  String result = addressForm.getURL();
+	  Assert.assertEquals(result, endURL);
   }
   
   @BeforeMethod
