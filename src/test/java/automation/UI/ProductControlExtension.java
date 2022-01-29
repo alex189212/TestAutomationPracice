@@ -10,7 +10,7 @@ public class ProductControlExtension extends UIControlBase {
 	}
 	
 	public void addToCart() {
-		driver.findElement(By.cssSelector(".exclusive")).click();
+		driver.findElement(By.cssSelector("button.exclusive")).click();
 	}
 	
 	public void addToWishlist() {

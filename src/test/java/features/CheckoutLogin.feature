@@ -16,11 +16,9 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
 Feature: Title of your feature
   I want to use this template for my feature file
 
-  @tag1
   Scenario: Title of your scenario
     Given I am on the homepage
     When Click on a product
@@ -29,14 +27,3 @@ Feature: Title of your feature
     And Proceed to login screen
     And Enter my login
     Then The address form appears
-
-  @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
-
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |

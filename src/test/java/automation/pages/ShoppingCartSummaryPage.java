@@ -25,7 +25,7 @@ public class ShoppingCartSummaryPage extends PageObjectBase {
 	}
 
 	public LoginPage proceedToCheckout() {
-		driver.findElement(By.cssSelector("a[title='Proceed to checkout']"));
+		driver.findElement(By.className("standard-checkout")).click();
 		return new LoginPage(this.driver);
 	}
 }
