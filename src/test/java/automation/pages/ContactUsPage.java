@@ -12,16 +12,12 @@ public class ContactUsPage extends PageObjectBase {
 
 	@FindBy(how = How.CSS, using = "select[id='id_contact']")
 	WebElement subjectHeading;
-
 	@FindBy(how = How.CSS, using = "input[id='email']")
 	WebElement emailAddress;
-
 	@FindBy(how = How.CSS, using = "input[id='id_order']")
 	WebElement orderReference;
-
 	@FindBy(how = How.CSS, using = "textarea[id='message']")
 	WebElement messageBox;
-
 	@FindBy(how = How.CSS, using = "button[id='submitMessage']")
 	WebElement sendButton;
 
@@ -48,13 +44,13 @@ public class ContactUsPage extends PageObjectBase {
 		new ContactUsPageCtrlExtn(this.orderReference).enterOrderreference(text);
 		return this;
 	}
-	
+
 	public ContactUsPage enterMessage(String text) {
 
 		new ContactUsPageCtrlExtn(this.messageBox).enterMessage(text);
 		return this;
 	}
-	
+
 	public void clickSendButton() {
 
 		new ContactUsPageCtrlExtn(this.sendButton).clickSendButton();
