@@ -47,7 +47,6 @@ public class ForgotPasswordPage extends PageObjectBase {
 	public void submit(String string) {
 		controller.submitText(string, emailTextElement);
 		retrievePasswordButtonElement.click();
-		//controller.click(retrievePasswordButtonElement);
 	}
 
 	public boolean isSuccess() {
