@@ -41,4 +41,12 @@ public class LoginPage extends PageObjectBase {
 		return new HomePage(this.driver);
 	}
 
+	public AccountPage orderlogin(String email, String password) {
+
+		LoginControlExtension loginElements = new LoginControlExtension(this.driver, emailBoxElement, passwordElement);
+		loginElements.sendLogin(email, password);
+		signInButton.click();
+		return new AccountPage(this.driver);
+	}
+
 }

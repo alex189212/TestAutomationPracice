@@ -21,4 +21,14 @@ public class Page1CtrlExtn {
 
 	}
 
+	public String noOderElementGetText() {
+
+		return this.element.getText();
+
+	}
+
+	public boolean oderListTableIsDisplayed() {
+		return this.element.isDisplayed();
+	}
+
 }

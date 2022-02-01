@@ -71,4 +71,8 @@ public class ActionsCtrlExtn {
 		action.moveToElement(this.element).click().build().perform();
 	}
 
+	public void clickOnOrderHistory() {
+		this.element.click();
+	}
+
 }
