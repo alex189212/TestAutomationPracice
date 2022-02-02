@@ -7,6 +7,7 @@ import org.openqa.selenium.support.How;
 
 import automation.UI.PrintedDressControlExtension;
 import automation.UI.UIControlBase;
+import org.openqa.selenium.support.ui.Select;
 
 public class PrintedDressPage extends PageObjectBase {
 	private final String url = "http://invenauto.tech/index.php?id_product=3&controller=product";
@@ -32,6 +33,9 @@ public class PrintedDressPage extends PageObjectBase {
 	
 	@FindBy(how=How.CSS, using="")
 	private WebElement ratingsElement;
+	
+	@FindBy(how=How.ID, using="group_1")
+	private WebElement sizeSelectElement;
 	
 	public PrintedDressPage(WebDriver driver) {
 		super(driver);
@@ -76,5 +80,16 @@ public class PrintedDressPage extends PageObjectBase {
 
 	public boolean areRatingsVisible() {
 		return false;
+	}
+
+	public void selectSize(String string) {
+		Select dropdown = new Select(sizeSelectElement);
+		dropdown.selectByVisibleText(string);
+		
+	}
+
+	public String sizeSelected() {
+		Select dropdown = new Select(sizeSelectElement);
+		return dropdown.getFirstSelectedOption().getText();
 	}
 }
