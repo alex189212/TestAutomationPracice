@@ -15,6 +15,9 @@ public class AccountPage extends PageObjectBase {
 	private WebElement navigationHomeElement;
 	@FindBy (how = How.CSS, using="a[title='Orders'] span")
 	private WebElement orderHistory;
+	@FindBy (how = How.CSS, using="a[title='Addresses']")
+	private WebElement myAddressesElement;
+
 	
 	public AccountPage(WebDriver driver) {
 		super(driver);
@@ -32,5 +35,10 @@ public class AccountPage extends PageObjectBase {
 		
 		new ActionsCtrlExtn(this.orderHistory,this.driver).clickOnOrderHistory();
 		return new OrderHistoryPage(this.driver);
+	}
+	
+	public MyAddressesPage goToAddresses() {
+		myAddressesElement.click();
+		return new MyAddressesPage(driver);
 	}
 }

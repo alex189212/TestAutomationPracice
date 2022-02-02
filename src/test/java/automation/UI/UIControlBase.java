@@ -5,14 +5,14 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class UIControlBase {
 	protected WebDriver driver;
-	protected JavascriptExecutor control_executor;
+	protected JavascriptExecutor controlExecutor;
 	protected UIControlBase(WebDriver driver) {
 		this.driver = driver;
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		control_executor = jse;
+		controlExecutor = jse;
 	}
 	
 	protected JavascriptExecutor getExecutor() {
-		return control_executor;
+		return controlExecutor;
 	}
 }

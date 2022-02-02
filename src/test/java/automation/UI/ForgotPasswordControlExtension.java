@@ -17,7 +17,7 @@ public class ForgotPasswordControlExtension extends UIControlBase {
 	}
 
 	public void submitText(String string, WebElement emailTextElement) {
-		control_executor.executeScript("arguments[0].value=arguments[1];", emailTextElement,string);
+		controlExecutor.executeScript("arguments[0].value=arguments[1];", emailTextElement,string);
 	}
 
 

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import automation.UI.AddressFormControl;
+import automation.UI.FormData;
 import automation.UI.Page2CtrlExtn;
 import automation.UI.SelectCtrlExtn;
 
@@ -17,7 +19,7 @@ public class AddressesPage extends PageObjectBase {
 	@FindBy(how = How.ID, using = "address1")
 	private WebElement address1Textbox;
 	@FindBy(how = How.ID, using = "city")
-	private WebElement city;;
+	private WebElement city;
 	@FindBy(how = How.ID, using = "id_state")
 	private WebElement state;
 	@FindBy(how = How.ID, using = "postcode")
@@ -91,5 +93,13 @@ public class AddressesPage extends PageObjectBase {
 
 		new Page2CtrlExtn(this.savebutton).clickRegister();
 
+	}
+	
+	public MyAddressesPage enterFormData(FormData formData) {
+		//create AddressControlExtension instance, pass formData as param
+		AddressFormControl formControl = new AddressFormControl(driver);
+		formControl.fillForm(formData);
+		savebutton.click();
+		return new MyAddressesPage(driver);
 	}
 }
