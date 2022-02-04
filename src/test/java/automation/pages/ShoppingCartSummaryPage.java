@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import automation.UI.ActionsCtrlExtn;
+import automation.framework.PageObjectBase;
 
 public class ShoppingCartSummaryPage extends PageObjectBase {
 	final String expectedAccountName = "David Warner";
@@ -27,6 +28,7 @@ public class ShoppingCartSummaryPage extends PageObjectBase {
 	final String state = "New York";
 	final String expected = "MY ACCOUNT";
 
+	
 	@FindBy(how = How.CSS, using = "a[class='button btn btn-default standard-checkout button-medium'] span")
 	private WebElement proceedToCheckOut;
 

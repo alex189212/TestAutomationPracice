@@ -3,6 +3,8 @@ package automation.UI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import automation.framework.UIControlBase;
+
 public class ProductControlExtension extends UIControlBase {
 
 	public ProductControlExtension(WebDriver driver) {

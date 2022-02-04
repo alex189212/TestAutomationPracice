@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import automation.UI.LoginControlExtension;
+import automation.framework.PageObjectBase;
 
 public class LoginPage extends PageObjectBase {
 	final private String destination = "http://invenauto.tech/index.php?controller=authentication&back=my-account";

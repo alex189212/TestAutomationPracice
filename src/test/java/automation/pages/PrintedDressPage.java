@@ -6,7 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import automation.UI.PrintedDressControlExtension;
-import automation.UI.UIControlBase;
+import automation.framework.UIControlBase;
+import automation.framework.PageObjectBase;
+
 import org.openqa.selenium.support.ui.Select;
 
 public class PrintedDressPage extends PageObjectBase {

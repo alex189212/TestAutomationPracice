@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import automation.UI.Page1CtrlExtn;
+import automation.framework.PageObjectBase;
 
 public class UserRegistrationPage extends PageObjectBase {
 	private String url = "http://invenauto.tech/index.php?controller=authentication&back=my-account";

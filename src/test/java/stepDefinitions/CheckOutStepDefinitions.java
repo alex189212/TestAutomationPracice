@@ -4,7 +4,7 @@ import org.testng.Assert;
 
 import automation.pages.HomePage;
 import automation.pages.ShoppingCartSummaryPage;
-import automation.tests.TestBase;
+import automation.framework.TestBase;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

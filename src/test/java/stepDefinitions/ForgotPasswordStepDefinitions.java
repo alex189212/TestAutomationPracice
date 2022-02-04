@@ -3,7 +3,7 @@ package stepDefinitions;
 import static org.testng.Assert.assertTrue;
 
 import automation.pages.ForgotPasswordPage;
-import automation.tests.TestBase;
+import automation.framework.TestBase;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

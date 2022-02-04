@@ -3,8 +3,10 @@ package automation.UI;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import automation.framework.UIControlBase;
+
 public class TextBoxExtension extends UIControlBase {
-	WebElement textBox;
+	private WebElement textBox;
 	public TextBoxExtension(WebDriver driver, WebElement element) {
 		super(driver);
 		textBox = element;
