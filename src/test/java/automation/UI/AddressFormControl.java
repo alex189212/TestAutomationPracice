@@ -23,7 +23,7 @@ public class AddressFormControl extends UIControlBase {
 		WebElement state = driver.findElement(By.id("id_state"));
 		Select stateDropdown = new Select(state);
 		
-		WebElement country = driver.findElement(By.id("country"));
+		WebElement country = driver.findElement(By.id("id_country"));
 		Select countryDropdown = new Select(country);
 		
 		WebElement zipCode = driver.findElement(By.id("postcode"));
