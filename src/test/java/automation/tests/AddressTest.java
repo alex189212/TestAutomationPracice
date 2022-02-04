@@ -18,7 +18,6 @@ public class AddressTest extends TestBase {
 
 		new LoginPage(this.getDriver()).navigate().login(email, loginpassword).hoverOverProductImage()
 				.clickOnHoverAddToCartButton().clickOnProceedToCheckout().clickOnCheckout();
-
 		Assert.assertTrue(this.getDriver()
 				.findElement(By.cssSelector("ul[class='address item box'] h3[class='page-subheading']")).isDisplayed());
 	}

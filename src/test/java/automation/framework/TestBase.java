@@ -33,7 +33,7 @@ public abstract class TestBase {
 		this.driver = new ChromeDriver();
 		this.driver.manage().window().maximize();
 
-		long pageLoadTimeout = 60;
+		long pageLoadTimeout = 10;
 		this.driver.manage().timeouts().implicitlyWait(pageLoadTimeout, TimeUnit.SECONDS);
 	}
 }
