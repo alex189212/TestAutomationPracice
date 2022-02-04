@@ -9,6 +9,7 @@ import automation.UI.AddressFormControl;
 import automation.UI.FormData;
 import automation.UI.Page2CtrlExtn;
 import automation.UI.SelectCtrlExtn;
+import automation.framework.PageObjectBase;
 
 public class AddressesPage extends PageObjectBase {
 

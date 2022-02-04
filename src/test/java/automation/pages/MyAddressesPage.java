@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import automation.framework.PageObjectBase;
+
 public class MyAddressesPage extends PageObjectBase {
 	
 	@FindBy(how = How.CSS, using="a[title='Add an address']")

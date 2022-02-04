@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import automation.UI.Page1CtrlExtn;
+import automation.framework.PageObjectBase;
 
 public class OrderHistoryPage extends PageObjectBase {
 

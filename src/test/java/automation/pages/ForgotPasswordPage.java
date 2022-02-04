@@ -8,8 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import automation.UI.ForgotPasswordControlExtension;
-import automation.UI.UIControlBase;
-import automation.pages.PageObjectBase;
+import automation.framework.UIControlBase;
+import automation.framework.PageObjectBase;
 
 public class ForgotPasswordPage extends PageObjectBase {
 	private final String url = "http://invenauto.tech/index.php?controller=password";

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import automation.framework.UIControlBase;
+
 public class AddressFormControl extends UIControlBase {
 
 	public AddressFormControl(WebDriver driver) {

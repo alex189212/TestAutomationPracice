@@ -7,7 +7,7 @@ import automation.pages.HomePage;
 import automation.pages.LoginPage;
 import automation.pages.ProductPage;
 import automation.pages.ShoppingCartSummaryPage;
-import automation.tests.TestBase;
+import automation.framework.TestBase;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

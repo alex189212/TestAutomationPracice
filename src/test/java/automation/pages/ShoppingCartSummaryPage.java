@@ -7,9 +7,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import automation.UI.ActionsCtrlExtn;
+import automation.framework.PageObjectBase;
 
 public class ShoppingCartSummaryPage extends PageObjectBase {
 
+	
 	@FindBy(how = How.CSS, using = "a[class='button btn btn-default standard-checkout button-medium'] span")
 	private WebElement proceedToCheckOut;
 

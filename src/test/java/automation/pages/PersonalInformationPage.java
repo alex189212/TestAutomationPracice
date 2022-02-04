@@ -7,6 +7,7 @@ import org.openqa.selenium.support.How;
 
 import automation.UI.Page2CtrlExtn;
 import automation.UI.SelectCtrlExtn;
+import automation.framework.PageObjectBase;
 
 public class PersonalInformationPage extends PageObjectBase {
 

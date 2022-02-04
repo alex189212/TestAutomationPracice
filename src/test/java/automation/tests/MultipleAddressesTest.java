@@ -1,6 +1,9 @@
 package automation.tests;
 
 import org.testng.annotations.Test;
+
+import automation.framework.TestBase;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 

@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import automation.framework.UIControlBase;
+
 public class ForgotPasswordControlExtension extends UIControlBase {
 
 	public ForgotPasswordControlExtension(WebDriver driver) {

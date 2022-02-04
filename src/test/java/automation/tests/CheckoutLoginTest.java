@@ -2,6 +2,7 @@ package automation.tests;
 
 import org.testng.annotations.Test;
 
+import automation.framework.TestBase;
 import automation.pages.AddressesPage;
 import automation.pages.HomePage;
 import automation.pages.ProductPage;

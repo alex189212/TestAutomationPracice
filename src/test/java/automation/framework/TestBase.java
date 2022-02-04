@@ -1,4 +1,4 @@
-package automation.tests;
+package automation.framework;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

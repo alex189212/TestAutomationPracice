@@ -3,6 +3,8 @@ package automation.UI;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import automation.framework.UIControlBase;
+
 public class LoginControlExtension extends UIControlBase {
 	private WebElement emailBox;
 	private WebElement passwordBox;

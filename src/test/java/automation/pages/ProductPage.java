@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import automation.UI.ProductControlExtension;
+import automation.framework.PageObjectBase;
 
 public class ProductPage extends PageObjectBase {
 
