@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import automation.framework.TestBase;
 import automation.pages.AccountPage;
+import automation.pages.HomePage;
 import automation.pages.LoginPage;
 
 import org.testng.annotations.BeforeMethod;
@@ -23,6 +24,20 @@ public class LoginTests extends TestBase{
 			  .getAccountName();
 	  
 	  Assert.assertEquals(result, expectedAccountName);
+  }
+  
+  @Test
+  public void canSignOut() {
+	 final String homepageURL = "http://invenauto.tech/index.php";
+	 final String email = "helloThere245@att.net";
+	 final String password = "theHighGround";
+	 
+	 String result = new HomePage(this.getDriver())
+			 .navigate()
+			 .login()
+			 .orderlogin(email, password)
+			 .returnHome()
+			 .getURL();
   }
   
   @BeforeMethod
