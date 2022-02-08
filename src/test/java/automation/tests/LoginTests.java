@@ -17,11 +17,11 @@ public class LoginTests extends TestBase{
 	  final String email = "abc@abc.com";
 	  final String password = "davidwarner123";
 	  
-	  LoginPage login = new LoginPage(this.getDriver())
-			  .navigate();
-	  login.orderlogin(email, password);
-	  AccountPage myAccount = new AccountPage(this.getDriver());
-	  String result = myAccount.getAccountName();
+	  String result = new LoginPage(this.getDriver())
+			  .navigate()
+			  .orderlogin(email, password)
+			  .getAccountName();
+	  
 	  Assert.assertEquals(result, expectedAccountName);
   }
   
