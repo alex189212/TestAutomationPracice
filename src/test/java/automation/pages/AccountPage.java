@@ -28,8 +28,9 @@ public class AccountPage extends PageObjectBase {
 		return accountNameElement.getText();
 	}
 	
-	public void returnHome() {
+	public HomePage returnHome() {
 		navigationHomeElement.click();
+		return new HomePage(this.driver);
 	}
 	
 	public OrderHistoryPage clickOnOrderHistory() {

@@ -16,7 +16,7 @@ public class AddressTest extends TestBase {
 	@Test
 	public void canTestAddress() {
 
-		new LoginPage(this.getDriver()).navigate().login(email, loginpassword).hoverOverProductImage()
+		new LoginPage(this.getDriver()).navigate().orderlogin(email, loginpassword).returnHome().hoverOverProductImage()
 				.clickOnHoverAddToCartButton().clickOnProceedToCheckout().clickOnCheckout();
 		Assert.assertTrue(this.getDriver()
 				.findElement(By.cssSelector("ul[class='address item box'] h3[class='page-subheading']")).isDisplayed());

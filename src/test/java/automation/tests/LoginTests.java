@@ -19,7 +19,7 @@ public class LoginTests extends TestBase{
 	  
 	  LoginPage login = new LoginPage(this.getDriver())
 			  .navigate();
-	  login.enterLoginInfo(email, password);
+	  login.orderlogin(email, password);
 	  AccountPage myAccount = new AccountPage(this.getDriver());
 	  String result = myAccount.getAccountName();
 	  Assert.assertEquals(result, expectedAccountName);

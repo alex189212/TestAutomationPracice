@@ -57,7 +57,7 @@ public class CheckoutLoginStep extends TestBase{
 	public void enter_my_login() {
 	    // Write code here that turns the phrase above into concrete actions
 		userLogin = new LoginPage(this.getDriver());
-	    userLogin.enterLoginInfo("helloThere245@att.net", "theHighGround");
+	    userLogin.orderlogin("helloThere245@att.net", "theHighGround");
 	}
 
 	@Then("The address form appears")

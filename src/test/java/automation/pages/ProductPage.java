@@ -25,7 +25,7 @@ public class ProductPage extends PageObjectBase {
 	}
 	*/
 	
-	public String addToCart() {
+	public ProductPage addToCart() {
 		ProductControlExtension productToAdd = new ProductControlExtension(driver);
 		productToAdd.addToCart();
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(this.driver)
@@ -38,7 +38,7 @@ public class ProductPage extends PageObjectBase {
 				return driver.findElement(By.xpath("//i[@class='icon-check']"));
 			}
 		});
-		return productAddedText.getText();
+		return this;
 	}
 	
 	public ShoppingCartSummaryPage proceedToCheckout() {

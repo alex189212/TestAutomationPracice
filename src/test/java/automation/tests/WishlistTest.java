@@ -22,7 +22,7 @@ public class WishlistTest extends TestBase{
 	  HomePage home = new HomePage(this.getDriver()).navigate();
 	  home.login();
 	  LoginPage login = new LoginPage(this.getDriver());
-	  login.enterLoginInfo(email, password);
+	  login.orderlogin(email, password);
 	  AccountPage accountInfo = new AccountPage(this.getDriver());
 	  accountInfo.returnHome();
 	  HomePage loggedInHome = new HomePage(this.getDriver());

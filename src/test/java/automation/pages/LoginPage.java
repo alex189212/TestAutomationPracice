@@ -26,20 +26,12 @@ public class LoginPage extends PageObjectBase {
 		this.driver.navigate().to(destination);
 		return this;
 	}
-
-	public void enterLoginInfo(String email, String password) {
-		LoginControlExtension loginElements = new LoginControlExtension(this.driver, emailBoxElement, passwordElement);
-		loginElements.sendLogin(email, password);
+	
+	public AddressesPage checkoutLogin(String email, String password) {
+		LoginControlExtension login = new LoginControlExtension(this.driver, emailBoxElement, passwordElement);
+		login.sendLogin(email, password);
 		signInButton.click();
-	}
-
-	public HomePage login(String email, String password) {
-
-		LoginControlExtension loginElements = new LoginControlExtension(this.driver, emailBoxElement, passwordElement);
-		loginElements.sendLogin(email, password);
-		signInButton.click();
-		this.homePageLogo.click();
-		return new HomePage(this.driver);
+		return new AddressesPage(this.driver);
 	}
 
 	public AccountPage orderlogin(String email, String password) {

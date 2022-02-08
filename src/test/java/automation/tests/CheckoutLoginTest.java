@@ -18,15 +18,15 @@ public class CheckoutLoginTest extends TestBase{
 	  String product = "Faded Short Sleeves T-shirt";
 	  String userEmail = "helloThere245@att.net";
 	  String userPassword = "theHighGround";
-	  String endURL = "http://invenauto.tech/index.php?controller=authentication";
-	  HomePage homepage = new HomePage(this.getDriver())
-			  .navigate();
-	  ProductPage productToAdd = homepage.goToProductPage(product);
-	  productToAdd.addToCart();
-	  ShoppingCartSummaryPage cartSummary = productToAdd.proceedToCheckout();
-	  cartSummary.proceedToCheckout().enterLoginInfo(userEmail, userPassword);
-	  AddressesPage addressForm = new AddressesPage(this.getDriver());
-	  String result = addressForm.getURL();
+	  String endURL = "http://invenauto.tech/index.php?controller=address&back=order.php%3Fstep%3D1";
+	  String result = new HomePage(this.getDriver())
+			  .navigate()
+			  .goToProductPage(product)
+			  .addToCart().proceedToCheckout()
+			  .proceedToCheckout()
+			  .checkoutLogin(userEmail, userPassword)
+			  .getURL();
+	  
 	  Assert.assertEquals(result, endURL);
   }
   
