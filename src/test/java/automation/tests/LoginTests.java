@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import automation.framework.TestBase;
 import automation.pages.AccountPage;
+import automation.pages.HomePage;
 import automation.pages.LoginPage;
 
 import org.testng.annotations.BeforeMethod;
@@ -17,12 +18,26 @@ public class LoginTests extends TestBase{
 	  final String email = "abc@abc.com";
 	  final String password = "davidwarner123";
 	  
-	  LoginPage login = new LoginPage(this.getDriver())
-			  .navigate();
-	  login.orderlogin(email, password);
-	  AccountPage myAccount = new AccountPage(this.getDriver());
-	  String result = myAccount.getAccountName();
+	  String result = new LoginPage(this.getDriver())
+			  .navigate()
+			  .orderlogin(email, password)
+			  .getAccountName();
+	  
 	  Assert.assertEquals(result, expectedAccountName);
+  }
+  
+  @Test
+  public void canSignOut() {
+	 final String homepageURL = "http://invenauto.tech/index.php";
+	 final String email = "helloThere245@att.net";
+	 final String password = "theHighGround";
+	 
+	 String result = new HomePage(this.getDriver())
+			 .navigate()
+			 .login()
+			 .orderlogin(email, password)
+			 .returnHome()
+			 .getURL();
   }
   
   @BeforeMethod

@@ -38,7 +38,11 @@ public class HomePage extends PageObjectBase {
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
-
+	
+	public String getURL() {
+		return homepageURL;
+	}
+	
 	public HomePage navigate() {
 		this.driver.navigate().to(homepageURL);
 		return this;
