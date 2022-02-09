@@ -1,39 +1,61 @@
 package automation.framework;
 
+
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 public abstract class TestBase {
 
-	private ChromeDriver driver;
+	private WebDriver driver;
 
 	protected WebDriver getDriver() {
 		return this.driver;
 	}
-
-	protected void setup() {
-		launchChromeDriver();
+	
+	@BeforeMethod
+	protected void setup()  {
+		try {
+			launchDriver();
+		} catch (FileNotFoundException e) {
+			System.out.println("Browserdriver not found");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Wrong input in config");
+			e.printStackTrace();
+		}
 	}
-
+	
+	@AfterMethod
 	protected void cleanup() {
 		this.driver.quit();
 	}
+	
+	private void launchDriver() throws FileNotFoundException, IOException {
 
-	private void launchChromeDriver() {
-		Path resourceDirectory = Paths.get("src", "test", "resources");
+		Path resourceDirectory = Paths.get("src","test","resources");
 		String absolutePath = resourceDirectory.toFile().getAbsolutePath();
-		Path driverFile = Paths.get(absolutePath, "chromedriver.exe");
+		Path configFile = Paths.get(absolutePath, "config.properties");
+		
+		Properties driverProperties = new Properties();
+		driverProperties.load(new FileInputStream(configFile.toString()));
 
-		System.setProperty("webdriver.chrome.driver", driverFile.toFile().getAbsolutePath());
+		String browser = driverProperties.getProperty("browser");
+		
+		DriverManager manager = DriverManagerFactory.getManager(browser);
+		manager.createDriver();
+		this.driver = manager.getDriver();
 
-		this.driver = new ChromeDriver();
-		this.driver.manage().window().maximize();
-
-		long pageLoadTimeout = 10;
-		this.driver.manage().timeouts().implicitlyWait(pageLoadTimeout, TimeUnit.SECONDS);
+		long pageLoadTimeout = 60;
+		this.driver.manage().timeouts().implicitlyWait(pageLoadTimeout , TimeUnit.SECONDS);
 	}
 }
